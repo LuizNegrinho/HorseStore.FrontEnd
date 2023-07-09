@@ -1,0 +1,9 @@
+.photo {
+  display: flex;
+  justify-content: center;
+  padding: 2vw
+}
+.photo img {
+  max-width: 70vw;
+  height: auto;
+}

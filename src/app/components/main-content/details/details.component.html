@@ -1,0 +1,16 @@
+<div>
+  <a [routerLink]="['/']" routerLinkActive="router-link-active" >
+     < voltar
+  </a>
+  <h2>Lote {{ foalData.id }}</h2>
+  <div class="photo">
+    <img [src]="foalData.imageUrl" alt="Foto">
+  </div>
+  <p>Nome: {{ foalData.name }}</p>
+  <p>Sufixo: {{ foalData.sufix }}</p>
+  <p>Data de Nascimento: {{ foalData.birthDate | date }}</p>
+  <p>Preço de Venda: {{ foalData.sellPrice | currency }}</p>
+  <p>Preço Mínimo: {{ foalData.minPrice | currency }}</p>
+  <p>Lances: {{ foalData.bid }}</p>
+</div>
+

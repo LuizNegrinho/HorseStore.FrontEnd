@@ -1,0 +1,70 @@
+footer {
+  /* background-image: url(/assets/imagens/fundo-rodape.png); */
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". profile center-right";
+  align-items: center;
+  justify-content: center;
+}
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.LogoRodape {
+  justify-self: center;
+  grid-area: LogoRodape;
+}
+
+footer small {
+  color: white;
+}
+.center-right{
+  justify-self: flex-end;
+  align-self:flex-end;
+  padding-right: .5rem;
+  padding-bottom: .5rem;
+  grid-area: center-right;
+
+}
+.center-foot{
+  max-width: 30%;
+  grid-area: profile;
+  justify-self: center;
+  padding-bottom: 1rem;
+}
+.right-foot{
+  display: flex;
+  flex-direction: column;
+}
+
+.profile {
+  transition: transform 0.3s ease; /* Adiciona uma transição suave à animação */
+}
+
+.profile:hover {
+  transform: rotate(360deg); /* Aplica a rotação de 360 graus quando o mouse passa por cima */
+}
+@media (max-width: 576px) {
+  .cabecalho .logo {
+    padding: 2rem;
+  }
+
+  .cabecalho p {
+    font-size: 1.5rem
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+}

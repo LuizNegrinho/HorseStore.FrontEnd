@@ -1,0 +1,49 @@
+.header-top {
+  /* background: url(/assets/imagens/fundo-header.png); */
+  background-color: black;
+  background-size: cover;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.header-top .logo {
+  width: 46%;
+  padding-top:2rem;
+  padding-left:2rem;
+}
+
+.header-top .logo img {
+  width: 100%;
+  max-width: 350px;
+  opacity: .9;
+  /* margin-bottom: 2rem; */
+}
+
+.header-top .mark{
+  width: 15%;
+  opacity: 0.6;
+}
+
+.header-top p {
+  font-size: 2rem;
+  color: #6BD1FF;
+}
+
+@media (max-width: 576px) {
+  .header-top .logo {
+    padding: 2rem;
+  }
+  .header-top p {
+    font-size: 1.5rem
+  }
+}
+
+@media (max-width: 768px) {
+  .header-top .logo {
+    width: 90%;
+  }
+  .header-top .mark {
+    display: none;
+  }
+}
