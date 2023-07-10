@@ -1,0 +1,18 @@
+<table>
+    <thead>
+      <tr>
+        <th>Usuário</th>
+        <th>Cidade</th>
+        <th>Data/Hora do Lance</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bid of auction">
+        <td>{{ bid.username }}</td>
+        <td>{{ bid.location }}</td>
+        <td>{{ bid.date }}</td>
+        <td>{{ bid.bid }}</td>
+      </tr>
+    </tbody>
+  </table>
