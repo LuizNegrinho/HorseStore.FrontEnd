@@ -1,3 +1,7 @@
+.main{
+  margin-bottom: 5%;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -21,6 +25,7 @@
 .photo img {
   max-width: 100%;
   height: auto;
+  border-radius: 1%;
 }
 
 .details {

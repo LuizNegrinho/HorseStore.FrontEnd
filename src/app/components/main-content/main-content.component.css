@@ -1,3 +1,7 @@
+.main {
+  margin: 2% 0;
+}
+
 .grid-container {
   display: grid;
   flex-wrap: wrap;
@@ -13,9 +17,12 @@
 
 .grid-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 30vw;
   max-height: 30vw;
+  object-fit: cover;
+  border-radius: 2%;
+
 }
 
 h1 {

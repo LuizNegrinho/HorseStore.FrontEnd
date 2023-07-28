@@ -1,11 +1,13 @@
-<div>
-  <h2>Lotes 2023</h2>
-</div>
-<div class="grid-container">
-  <div *ngFor="let photo of photos" class="grid-item">
-    <a [routerLink]="['/detalhes', photo.id]">
-      <img [src]="photo.imageUrl" alt="Foto">
-      <p>{{ photo.description }}</p>
-    </a>
+<div class="main">
+  <div>
+    <h2>Lotes 2023</h2>
+  </div>
+  <div class="grid-container">
+    <div *ngFor="let photo of photos" class="grid-item">
+      <a [routerLink]="['/detalhes', photo.id]">
+        <img [src]="photo.imageUrl" alt="Foto">
+        <p>{{ photo.description }}</p>
+      </a>
+    </div>
   </div>
 </div>

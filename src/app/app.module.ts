@@ -9,6 +9,7 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { DetailsComponent } from './components/main-content/details/details.component';
 import { DetailsService } from './components/main-content/details/details.service';
 import { DetailsAuctionComponent } from './components/main-content/details/details-auction/details-auction.component';
+import { BrazilianCurrencyPipe } from './utils/brazilian-currency.pipe';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { DetailsAuctionComponent } from './components/main-content/details/detai
     FooterComponent,
     MainContentComponent,
     DetailsComponent,
-    DetailsAuctionComponent
+    DetailsAuctionComponent,
+    BrazilianCurrencyPipe
   ],
   imports: [
     BrowserModule,

@@ -1,22 +1,24 @@
-<div class="container">
-  <a [routerLink]="['/']" routerLinkActive="router-link-active">
-    < voltar
-  </a>
-  <div class="content">
-    <div class="details">
-      <h2>Lote {{ foalData.id }}</h2>
-      <p>Nome: {{ foalData.name }}</p>
-      <p>Sufixo: {{ foalData.sufix }}</p>
-      <p>Data de Nascimento: {{ foalData.birthDate | date }}</p>
-      <p>Preço de Venda: {{ foalData.sellPrice | currency }}</p>
-      <p>Preço Mínimo: {{ foalData.minPrice | currency }}</p>
-      <p>Lances: {{ foalData.bid }}</p>
-    </div>
-    <div class="photo">
-      <img [src]="foalData.imageUrl" alt="Foto">
+<div class="main">
+  <div class="container">
+    <a [routerLink]="['/']" routerLinkActive="router-link-active">
+      < voltar
+    </a>
+    <div class="content">
+      <div class="details">
+        <h2>Lote {{ foalData.id }}</h2>
+        <p>Nome: {{ foalData.name }}</p>
+        <p>Sufixo: {{ foalData.sufix }}</p>
+        <p>Data de Nascimento: {{ foalData.birthDate | date }}</p>
+        <p>Preço de Venda: {{ foalData.sellPrice | brazilianCurrency }}</p>
+        <p>Preço Mínimo: {{ foalData.minPrice | brazilianCurrency }}</p>
+        <p>Lances: {{ getMaxBid() | brazilianCurrency }}</p>
+      </div>
+      <div class="photo">
+        <img [src]="foalData.imageUrl" alt="Foto">
+      </div>
     </div>
   </div>
-</div>
-<div class="auction-grid">
-  <app-details-auction></app-details-auction>
+  <div class="auction-grid">
+    <app-details-auction></app-details-auction>
+  </div>
 </div>

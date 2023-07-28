@@ -17,4 +17,8 @@ export class DetailsComponent implements OnInit {
     let id = parseInt(this.lotId);
     this.foalData = this.detailsService.getFoal(id);
   }
+
+  getMaxBid(): number {
+    return Math.max(...this.foalData.bids);
+  }
 }
