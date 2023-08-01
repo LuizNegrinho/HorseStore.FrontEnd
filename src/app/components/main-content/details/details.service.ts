@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { DataService } from '../data-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DetailsService {
+  private lots = [];
   private foalsData =[
     { id: 1, imageUrl: 'assets/img/lotes/lote1.JPG', name: 'Hayabusa', sufix: 'Estrela Negra', birthDate: new Date(2023, 0, 1), sellPrice: 10000, minPrice: 5000, bids: [3000, 8000, 9000] },
     { id: 2, imageUrl: 'assets/img/lotes/lote2.JPG', name: 'Helix', sufix: 'Estrela Negra', birthDate: new Date(2023, 2, 15), sellPrice: 10000, minPrice: 5000, bids: [] },
@@ -21,7 +23,11 @@ export class DetailsService {
     { id: 5, username: 'Rafael Souza', location: 'Curitiba', date: '2023-07-13', bid: this.getRandomBid() }
 
   ]
-  constructor() { }
+  constructor(private dataService: DataService) { }
+
+  ngOnInit(){
+    this.dataService.getLots().subscribe(lots => this.lots = lots);
+  }
 
   getFoals(): any[]{
     return this.foalsData;

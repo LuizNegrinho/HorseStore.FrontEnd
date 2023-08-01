@@ -1,0 +1,112 @@
+{
+  "users": [
+    {
+      "userId": 1,
+      "name": "Luiz",
+      "username": "admin",
+      "password": "123",
+      "email": "luizavm@gmail.com",
+      "phone": 81989366459
+    }
+  ],
+  "bids": [
+    {
+      "bidId": 1,
+      "userId": 1,
+      "lotId": "Conteúdo do post 1...",
+      "value": 1
+    },
+    {
+      "bidId": 2,
+      "userId": 1,
+      "lotId": "Conteúdo do post 1...",
+      "value": 1
+    }
+  ],
+  "lots": [
+      {
+        "id": 1,
+        "imageUrl": "assets/img/lotes/lote1.JPG",
+        "name": "Hayabusa",
+        "sufix": "Estrela Negra",
+        "birthDate": "2023-01-01",
+        "sellPrice": 10000,
+        "minPrice": 5000,
+        "bids": [3000, 8000, 9000],
+        "mother":"Dalila Luxor",
+        "father":"Carvão VB",
+        "maxBid":"5000",
+        "maxBidUserId":1
+      },
+      {
+        "id": 2,
+        "imageUrl": "assets/img/lotes/lote2.JPG",
+        "name": "Helix",
+        "sufix": "Estrela Negra",
+        "birthDate": "2023-03-15",
+        "sellPrice": 10000,
+        "minPrice": 5000,
+        "bids": [],
+        "mother":"Dalila Luxor",
+        "father":"Carvão VB",
+        "maxBid":"5000",
+        "maxBidUserId":1
+      },
+      {
+        "id": 3,
+        "imageUrl": "assets/img/lotes/lote3.jpg",
+        "name": "Hades",
+        "sufix": "Estrela Negra",
+        "birthDate": "2023-01-01",
+        "sellPrice": 10000,
+        "minPrice": 5000,
+        "bids": [7000, 8000, 9000],
+        "mother":"Dalila Luxor",
+        "father":"Carvão VB",
+        "maxBid":"5000",
+        "maxBidUserId":1
+      },
+      {
+        "id": 4,
+        "imageUrl": "assets/img/lotes/lote4.jpg",
+        "name": "Hoshi",
+        "sufix": "Estrela Negra",
+        "birthDate": "2023-03-15",
+        "sellPrice": 10000,
+        "minPrice": 5000,
+        "bids": [1000, 1300, 1400],
+        "mother":"Dalila Luxor",
+        "father":"Carvão VB",
+        "maxBid":"5000",
+        "maxBidUserId":1
+      },
+      {
+        "id": 5,
+        "imageUrl": "assets/img/lotes/lote5.jpg",
+        "name": "Hyperion",
+        "sufix": "Estrela Negra",
+        "birthDate": "2023-01-01",
+        "sellPrice": 10000,
+        "minPrice": 5000,
+        "bids": [12000, 8000, 1000],
+        "mother":"Dalila Luxor",
+        "father":"Carvão VB",
+        "maxBid":"5000",
+        "maxBidUserId":1
+      },
+      {
+        "id": 6,
+        "imageUrl": "assets/img/lotes/lote6.JPG",
+        "name": "Hera",
+        "sufix": "Estrela Negra",
+        "birthDate": "2023-03-15",
+        "sellPrice": 10000,
+        "minPrice": 5000,
+        "bids": [1200, 3000, 4000],
+        "mother":"Dalila Luxor",
+        "father":"Carvão VB",
+        "maxBid":"5000",
+        "maxBidUserId":1
+        }
+    ]
+}

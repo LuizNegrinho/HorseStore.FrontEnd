@@ -10,6 +10,8 @@ import { DetailsComponent } from './components/main-content/details/details.comp
 import { DetailsService } from './components/main-content/details/details.service';
 import { DetailsAuctionComponent } from './components/main-content/details/details-auction/details-auction.component';
 import { BrazilianCurrencyPipe } from './utils/brazilian-currency.pipe';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -20,11 +22,13 @@ import { BrazilianCurrencyPipe } from './utils/brazilian-currency.pipe';
     MainContentComponent,
     DetailsComponent,
     DetailsAuctionComponent,
-    BrazilianCurrencyPipe
+    BrazilianCurrencyPipe,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [DetailsService],
   bootstrap: [AppComponent]

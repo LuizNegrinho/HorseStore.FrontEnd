@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from './data-service';
 
 @Component({
   selector: 'app-main-content',
@@ -6,19 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-content.component.css']
 })
 export class MainContentComponent implements OnInit {
+  lots:any = [];
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getLots();
   }
 
-  photos = [
-    { id: 1, imageUrl: 'assets/img/lotes/lote1.JPG', description: 'Hayabusa Estrela Negra' },
-    { id: 2, imageUrl: 'assets/img/lotes/lote2.JPG', description: 'Helix Estrela Negra' },
-    { id: 3, imageUrl: 'assets/img/lotes/lote3.jpg', description: 'Hades Estrela Negra' },
-    { id: 4, imageUrl: 'assets/img/lotes/lote4.jpg', description: 'Hoshi Estrela Negra' },
-    { id: 5, imageUrl: 'assets/img/lotes/lote5.jpg', description: 'Hyperion Estrela Negra' },
-    { id: 6, imageUrl: 'assets/img/lotes/lote6.JPG', description: 'Hera Estrela Negra' },
-  ]
+  getLots(){
+    return this.dataService.getLots().subscribe(lots => this.lots = lots);
+  }
 
 }
