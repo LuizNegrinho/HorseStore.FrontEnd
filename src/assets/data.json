@@ -1,26 +1,92 @@
 {
   "users": [
     {
-      "userId": 1,
+      "id": 1,
       "name": "Luiz",
       "username": "admin",
       "password": "123",
       "email": "luizavm@gmail.com",
       "phone": 81989366459
-    }
-  ],
-  "bids": [
-    {
-      "bidId": 1,
-      "userId": 1,
-      "lotId": "Conteúdo do post 1...",
-      "value": 1
     },
     {
-      "bidId": 2,
-      "userId": 1,
-      "lotId": "Conteúdo do post 1...",
-      "value": 1
+      "id": 2,
+      "name": "Maria",
+      "username": "maria123",
+      "password": "password123",
+      "email": "maria@example.com",
+      "phone": "1234567890"
+    },
+    {
+      "id": 3,
+      "name": "João",
+      "username": "joao456",
+      "password": "secret",
+      "email": "joao@gmail.com",
+      "phone": "9876543210"
+    },
+    {
+      "id": 4,
+      "name": "Ana",
+      "username": "ana17",
+      "password": "mypassword",
+      "email": "ana@example.com",
+      "phone": "5555555555"
+    },
+    {
+      "id": 5,
+      "name": "Pedro",
+      "username": "pedro99",
+      "password": "pass123",
+      "email": "pedro@example.com",
+      "phone": "9999999999"
+    }
+
+  ],
+  "bids": [  
+    {
+      "id": 1,
+      "userId":1,
+      "lotId": 1,
+      "username": "João da Silva",
+      "location": "São Paulo",
+      "date": "2023-07-09",
+      "value": 100
+    },
+    {
+      "id": 2,
+      "userId":2,
+      "lotId": 1,
+      "username": "Maria Santos",
+      "location": "Rio de Janeiro",
+      "date": "2023-07-10",
+      "value": 200
+    },
+    {
+      "id": 3,
+      "userId":3,
+      "lotId": 1,
+      "username": "Pedro Oliveira",
+      "location": "Belo Horizonte",
+      "date": "2023-07-11",
+      "value": 150
+    },
+    {
+      "id": 4,
+      "userId":4,
+      "lotId": 1,
+      "username": "Ana Costa",
+      "location": "Salvador",
+      "date": "2023-07-12",
+      "value": 180
+    },
+    {
+      "id": 5,
+      "userId":5,
+      "lotId": 1,
+      "username": "Rafael Souza",
+      "location": "Curitiba",
+      "date": "2023-07-13",
+      "value": 220
     }
   ],
   "lots": [
