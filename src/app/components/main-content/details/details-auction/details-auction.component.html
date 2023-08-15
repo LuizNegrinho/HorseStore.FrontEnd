@@ -1,18 +1,34 @@
-<table>
-    <thead>
-      <tr>
-        <th>Usuário</th>
-        <th>Cidade</th>
-        <th>Data/Hora do Lance</th>
-        <th>Valor</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let bid of auction">
-        <td>{{ bid.username }}</td>
-        <td>{{ bid.location }}</td>
-        <td>{{ bid.date }}</td>
-        <td>{{ bid.value | brazilianCurrency }}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="no-bids" *ngIf="auction.length === 0">
+  <span>Ainda não há lances para este lote, pode ser sua chance!</span>
+</div>
+
+<div>
+  <table *ngIf="auction.length > 0">
+      <thead>
+        <tr>
+          <th>Usuário</th>
+          <th>Cidade</th>
+          <th>Data/Hora do Lance</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bid of auction">
+          <td>{{ bid.username }}</td>
+          <td>{{ bid.location }}</td>
+          <td>{{ bid.date }}</td>
+          <td>{{ bid.value | brazilianCurrency }}</td>
+        </tr>
+      </tbody>
+  </table>  
+</div>
+
+<div class="insert-bid" *ngIf="!showInsertBidForm" (click)="toggleInsertBidForm()">
+  <button class="bid-button">
+    Dê seu lance!
+  </button>  
+</div>
+
+<div class="insert-form" *ngIf="showInsertBidForm">
+  <app-insert-bid [maxBid]="getMaxBid()" (cancel)="toggleInsertBidForm()"></app-insert-bid>
+</div>

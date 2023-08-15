@@ -7,13 +7,22 @@
   flex-wrap: wrap;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+  grid-row-gap: 50px;
 }
 
 .grid-item {
   text-align: center;
   flex: 1 0 20%;
   padding: 5px;
+  font-family: 'Arial', sans-serif;
 }
+
+.grid-item a {
+  text-decoration: none;
+  color: rgb(196, 4, 94)
+}
+
+
 
 .grid-item img {
   width: 100%;
@@ -25,6 +34,7 @@
 
 }
 
-h1 {
-  grid-column: 1 / -1;
+h2{
+  font-family: 'Arial', sans-serif;
+  color: rgb(170, 9, 90);
 }

@@ -36,7 +36,8 @@ footer small {
   max-width: 30%;
   grid-area: profile;
   justify-self: center;
-  padding-bottom: 1rem;
+  padding: 5px;
+
 }
 .right-foot{
   display: flex;

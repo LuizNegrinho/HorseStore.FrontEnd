@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,8 @@ import { DetailsService } from './components/main-content/details/details.servic
 import { DetailsAuctionComponent } from './components/main-content/details/details-auction/details-auction.component';
 import { BrazilianCurrencyPipe } from './utils/brazilian-currency.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { InsertBidComponent } from './components/main-content/details/details-auction/insert-bid/insert-bid.component';
+
 
 
 
@@ -23,12 +27,13 @@ import { HttpClientModule } from '@angular/common/http';
     DetailsComponent,
     DetailsAuctionComponent,
     BrazilianCurrencyPipe,
-
+    InsertBidComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [DetailsService],
   bootstrap: [AppComponent]

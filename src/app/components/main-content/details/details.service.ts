@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DataService } from '../data-service';
+import { Bid } from 'src/app/utils/Interfaces/bid-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,8 @@ export class DetailsService {
   }
 
   getFoal(id: number): any {
-    return this.foalsData.find(item => item.id === id);
+    //return this.foalsData.find(item => item.id === id);
+    return this.dataService.getLotById(id);
   }
 
   getAuction(): any{
@@ -42,5 +44,9 @@ export class DetailsService {
 
   getRandomBid(): number {
     return Math.floor(Math.random() * (8000 - 2000 + 1)) + 2000;
+  }
+
+  addBid(newBid: Bid): any{
+    return this.dataService.addBid(newBid)
   }
 }

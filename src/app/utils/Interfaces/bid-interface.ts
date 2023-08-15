@@ -6,4 +6,5 @@ export interface Bid {
   location: string;
   date: string; // A data é uma string no formato "YYYY-MM-DD"
   value: number;
+  installments: number;
 }

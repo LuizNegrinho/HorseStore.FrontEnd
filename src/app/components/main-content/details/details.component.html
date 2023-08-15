@@ -1,7 +1,7 @@
 <div class="main">
   <div class="container">
     <a [routerLink]="['/']" routerLinkActive="router-link-active">
-      < voltar
+      <
     </a>
     <div class="content">
       <div class="details">
@@ -11,7 +11,7 @@
         <p>Data de Nascimento: {{ foalData.birthDate | date }}</p>
         <p>Preço de Venda: {{ foalData.sellPrice | brazilianCurrency }}</p>
         <p>Preço Mínimo: {{ foalData.minPrice | brazilianCurrency }}</p>
-        <p>Lances: {{ getMaxBid() | brazilianCurrency }}</p>
+        <p>Maior Lance: {{ getMaxBid() | brazilianCurrency }}</p>
       </div>
       <div class="photo">
         <img [src]="foalData.imageUrl" alt="Foto">
