@@ -16,7 +16,10 @@ export class MainContentComponent implements OnInit {
   }
 
   getLots(){
-    return this.dataService.getLots().subscribe(lots => this.lots = lots);
+    this.dataService.getLots().subscribe(lots => {
+      console.log(lots)
+      this.lots = lots});
+    return
   }
 
 }
