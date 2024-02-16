@@ -1,5 +1,5 @@
 <div>
-  <form [formGroup]="bidForm" (ngSubmit)="teste()">
+  <form [formGroup]="bidForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="username">Usuário</label>
       <input type="text" id="username" formControlName="username" required>
@@ -24,7 +24,7 @@
     </div>
     <div class="confirm">
       <button type="submit" class="confirm-button">Confirmar</button>
-      <a [href]="whatsAppLink" target="_blank" class="confirm-button">ConfirmarLink</a>
+      <!-- <a [href]="whatsAppLink" class="confirm-button">Confirmar Via WhatsApp</a> -->
     </div>
   </form>
 </div>

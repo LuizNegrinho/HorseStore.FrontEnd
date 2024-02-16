@@ -14,23 +14,22 @@ export class DetailsAuctionComponent implements OnInit {
   showInsertBidForm = false;
   auction: Bid[] = [];
   maxBid: number = 0;
-  private lotId : any;  
+  private lotId : any;
   constructor(private detailsService : DetailsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.lotId = this.route.snapshot.paramMap.get('id');
     let id = parseInt(this.lotId);
-    //this.auction = this.detailsService.getAuction();
     this.detailsService.getAuctionById(id).subscribe((auction: Bid[]) => {this.auction = auction;},
       (error: any) => {
         console.error('Erro ao obter os lances do leilão', error);
       }
     );
   }
-  
+
   toggleInsertBidForm(): void {
     this.showInsertBidForm = !this.showInsertBidForm;
-  }  
+  }
 
   getMaxBid(): number {
     this.maxBid = this.auction.reduce((max, bid) => (bid.value > max ? bid.value : max), 0);

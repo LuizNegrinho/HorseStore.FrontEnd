@@ -16,12 +16,19 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  getLots() {
-    let params = new HttpParams().set('userId', '1');
+  getLots(userId: number = 1) {
+    let params = new HttpParams().set('userId', userId);
     var lots = this.http.get<any>(this.apiUrl + "Products/GetIndex", {params:params} ).pipe(map(response => response));
-    console.log(lots);
     return lots;
   }
+
+  getBidsByLot(productId: number) {
+    let params = new HttpParams().set('productId', productId)
+    return this.http.get<any>(this.apiUrl + "Products/GetBids", {params:params}).pipe(map(data => data));
+  }
+
+
+
 
   getUsers() {
     return this.http.get<any>(this.localApiUrl).pipe(map(data => data.users)
@@ -40,16 +47,6 @@ export class DataService {
     });
   }
 
-  getBids() {
-    return this.http.get<any>(this.localApiUrl).pipe(map(data => data.bids));
-  }
-
-  getBidsByLot(id: number) {
-    return this.http.get<any>(this.localApiUrl).pipe(
-      map(data => data.bids as Bid[]),
-      filter(bids => bids.some(bid => bid.lotId === id))
-    );
-  }
 
 
   getLotById(id: number){
