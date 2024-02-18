@@ -16,20 +16,28 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
+  //migrados
   getLots(userId: number = 1) {
     let params = new HttpParams().set('userId', userId);
     var lots = this.http.get<any>(this.apiUrl + "Products/GetIndex", {params:params} ).pipe(map(response => response));
     return lots;
   }
 
+
+  getLotById(productId: number){
+    let params = new HttpParams().set('productId', productId)
+    return this.http.get<Lot>(this.apiUrl + "Products/GetLot", {params:params}).pipe(map(data => data));
+  }
+
   getBidsByLot(productId: number) {
     let params = new HttpParams().set('productId', productId)
     return this.http.get<any>(this.apiUrl + "Products/GetBids", {params:params}).pipe(map(data => data));
   }
+  addBid(newBid: Bid) {
+    return this.http.post(this.apiUrl + "Products/InsertBid", newBid).pipe(map(data => data));
+  }
 
-
-
-
+  //não migrados
   getUsers() {
     return this.http.get<any>(this.localApiUrl).pipe(map(data => data.users)
     );
@@ -48,26 +56,6 @@ export class DataService {
   }
 
 
-
-  getLotById(id: number){
-    return this.http.get<any>(this.localApiUrl).pipe(
-      map(data => {const lots: Lot[] = data.lots;
-        return lots.find(lot=> lot.id === id);
-      }));
-  }
-
-  addBid(newBid: Bid): Observable<any> {
-    return this.http.get<any>(this.localApiUrl).pipe(
-      map(data => {
-        const bids = data.bids || []; // Caso o array bids não exista, criamos um array vazio
-        newBid.id = this.getNextBidId(bids); // Definimos o ID para a nova oferta
-        newBid.date = new Date().toISOString(); // Definimos a data e hora atual para a nova oferta
-        bids.push(newBid); // Adicionamos a nova oferta ao array bids
-        data.bids = bids; // Atualizamos o objeto data com o novo array bids
-        return this.http.post<any>(this.localApiUrl, data);
-      })
-    );
-  }
 
   private getNextBidId(bids: Bid[]): number {
     if (bids && bids.length > 0) {

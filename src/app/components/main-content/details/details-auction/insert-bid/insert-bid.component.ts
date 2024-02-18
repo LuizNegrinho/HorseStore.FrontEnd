@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Bid } from 'src/app/utils/Interfaces/bid-interface';
 import { DetailsService } from '../../details.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class InsertBidComponent implements OnInit {
   bidForm!: FormGroup;
   whatsAppLink: SafeUrl | null = null;
 
-  constructor(private formBuilder: FormBuilder, private detailsService: DetailsService, private sanitizer: DomSanitizer) {}
+  constructor(private formBuilder: FormBuilder, private detailsService: DetailsService, private sanitizer: DomSanitizer, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.bidForm = this.formBuilder.group({
@@ -28,11 +29,13 @@ export class InsertBidComponent implements OnInit {
   }
 
   onSubmit(): void {
+    const param = this.route.snapshot.paramMap.get('id');
+    const lotId = param ? parseInt(param) : 0;
     if (this.bidForm.valid) {
       const newBid: Bid = {
         id: 0,
         userId: 0, // Defina o ID do usuário que está fazendo a oferta
-        lotId: 0, // Defina o ID do lote ao qual a oferta pertence
+        lotId: lotId,
         username: this.bidForm.value.username,
         location: this.bidForm.value.city,
         date: '', // Será definido no serviço DataService
@@ -46,11 +49,9 @@ export class InsertBidComponent implements OnInit {
           console.log('Nova oferta adicionada com sucesso.');
           const link = this.generateWhatsAppLink(this.bidForm.value.username, this.bidForm.value.value, this.bidForm.value.installments);
           this.whatsAppLink = link;
-          console.log(`${this.whatsAppLink}`)
-
           window.open(this.whatsAppLink.toString(), '_blank');
-          //window.location.href = this.whatsAppLink.toString();
           this.bidForm.reset();
+          window.location.reload();
         },
         (error: any) => {
           console.error('Erro ao adicionar nova oferta.', error);
@@ -65,7 +66,6 @@ export class InsertBidComponent implements OnInit {
     const encodedMessage = encodeURIComponent(message);
     const link = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
     console.log(`${link}`)
-    //return this.sanitizer.bypassSecurityTrustUrl(link);
     return link;
   }
 
