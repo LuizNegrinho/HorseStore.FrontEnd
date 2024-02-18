@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataService } from '../data-service';
 import { Bid } from 'src/app/utils/Interfaces/bid-interface';
+import { Lot } from 'src/app/utils/Interfaces/lot-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -28,14 +29,9 @@ export class DetailsService {
     return this.foalsData;
   }
 
-  getFoal(id: number): any {
-    //return this.foalsData.find(item => item.id === id);
+  getFoal(id: number): any{
     return this.dataService.getLotById(id);
   }
-
-  // getAuction(): any{
-  //   return this.dataService.getBids();
-  // }
 
   getAuctionById(id: number): any {
     return this.dataService.getBidsByLot(id);
