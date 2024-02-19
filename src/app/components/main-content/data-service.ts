@@ -36,6 +36,10 @@ export class DataService {
   addBid(newBid: Bid) {
     return this.http.post(this.apiUrl + "Products/InsertBid", newBid).pipe(map(data => data));
   }
+  deleteBid(id: number){
+    let params = new HttpParams().set('id', id)
+    return this.http.delete(this.apiUrl + "Products/DeleteBid", {params:params}).pipe(map(data => data));
+  }
 
   //não migrados
   getUsers() {

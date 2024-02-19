@@ -10,6 +10,7 @@
           <th>Cidade</th>
           <th>Data/Hora do Lance</th>
           <th>Valor</th>
+          <th>Excluir</th>
         </tr>
       </thead>
       <tbody>
@@ -18,15 +19,16 @@
           <td>{{ bid.location }}</td>
           <td>{{ bid.date }}</td>
           <td>{{ bid.value | brazilianCurrency }}</td>
+          <td style="text-align: center; vertical-align: middle;"><span style="cursor: pointer;" (click)="deleteBid(bid.id)">🗑️</span></td>
         </tr>
       </tbody>
-  </table>  
+  </table>
 </div>
 
 <div class="insert-bid" *ngIf="!showInsertBidForm" (click)="toggleInsertBidForm()">
   <button class="bid-button">
     Dê seu lance!
-  </button>  
+  </button>
 </div>
 
 <div class="insert-form" *ngIf="showInsertBidForm">
