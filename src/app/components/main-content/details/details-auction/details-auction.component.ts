@@ -20,7 +20,7 @@ export class DetailsAuctionComponent implements OnInit {
   ngOnInit() {
     this.lotId = this.route.snapshot.paramMap.get('id');
     let id = parseInt(this.lotId);
-    this.detailsService.getAuctionById(id).subscribe((auction: Bid[]) => {this.auction = auction;},
+    this.detailsService.getAuctionById(id).subscribe((auction: Bid[]) => { this.auction = auction.slice().reverse(); },
       (error: any) => {
         console.error('Erro ao obter os lances do leilão', error);
       }
@@ -34,5 +34,11 @@ export class DetailsAuctionComponent implements OnInit {
   getMaxBid(): number {
     this.maxBid = this.auction.reduce((max, bid) => (bid.value > max ? bid.value : max), 0);
     return this.maxBid;
+  }
+  deleteBid(id: number) {
+    return this.detailsService.deleteBid(id).subscribe((data) => {
+      window.location.reload();
+      return data;
+    });
   }
 }

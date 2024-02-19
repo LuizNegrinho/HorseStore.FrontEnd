@@ -43,6 +43,10 @@ export class DetailsService {
   }
 
   addBid(newBid: Bid): any{
-    return this.dataService.addBid(newBid)
+    return this.dataService.addBid(newBid);
+  }
+
+  deleteBid(id: number) {
+    return this.dataService.deleteBid(id);
   }
 }
