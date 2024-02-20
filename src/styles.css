@@ -1,5 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
 
+/* pagina de login */
+:root {
+  --primary-color: #43484d; /* Cinza */
+  --secondary-color: #800080; /* Roxo */
+  --accent-color: rgb(196, 4, 94); /* Rosé */
+  --text-color: #333; /* Preto */
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+  background-color: darken(var(--secondary-color), 10%);
+}
+
+.btn-accent {
+  background-color: var(--accent-color);
+}
+
+.btn-accent:hover {
+  background-color: darken(var(--accent-color), 10%);
+}
+
+.form-control {
+  border: 1px solid var(--text-color);
+}
+
+label {
+  color: var(--text-color);
+}
+/* fim da pagina de login */
 * {
   margin: 0;
   padding: 0;
