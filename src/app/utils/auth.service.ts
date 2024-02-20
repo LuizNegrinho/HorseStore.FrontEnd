@@ -6,8 +6,10 @@ import { Injectable } from "@angular/core";
 
 export class AuthService {
   private loggedIn = false;
+  public username: string = '';
 
-  login() {
+  login(username: string, password: string) {
+    this.username = username;
     this.loggedIn = true;
   }
 

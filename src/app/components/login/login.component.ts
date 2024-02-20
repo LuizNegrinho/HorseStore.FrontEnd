@@ -21,7 +21,7 @@ export class LoginComponent{
   }
 
   login(username: string, password: string) {
-    this.authService.login();
+    this.authService.login(username, password);
   }
 
   logout(){
