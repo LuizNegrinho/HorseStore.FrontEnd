@@ -14,6 +14,10 @@
   margin-top: -12px;
 }
 
+.loggedIn {
+  color: aliceblue;
+}
+
 @media (max-width: 576px) {
   .header-top .logo {
     padding: 2rem;

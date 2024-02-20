@@ -1,5 +1,8 @@
-<header class="header-top">
+<div class="header-top">
+  <div class="loggedIn" *ngIf="authService.isLoggedIn()">
+    <span>Bem vindo!</span>
+  </div>
   <div class="logo">
     <img src="../../assets/img/logo_mark.png" alt="">
   </div>
-</header>
+</div>
