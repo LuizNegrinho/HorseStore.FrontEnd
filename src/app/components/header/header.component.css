@@ -25,6 +25,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   margin-right: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 button {

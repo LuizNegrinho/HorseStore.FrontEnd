@@ -1,10 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Bid } from "src/app/utils/Interfaces/bid-interface";
 import { User } from "src/app/utils/Interfaces/user-interface";
 import { Lot } from "src/app/utils/Interfaces/lot-interface";
-import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 
 @Injectable({

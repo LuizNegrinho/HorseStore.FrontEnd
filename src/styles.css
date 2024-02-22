@@ -7,6 +7,7 @@
   --accent-color: rgb(196, 4, 94);
   --accent-color2: rgba(190, 0, 111, 0.973); /* Rosé */
   --text-color: #333; /* Preto */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .btn-primary {
